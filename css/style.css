@@ -305,7 +305,7 @@ main .typing {
 
 main .container {
   position: absolute;
-  background-image: url(/img/pitchbgyellow.jpg);
+  background-image: url("img/pitchbgyellow.jpg");
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   width: 70%;
@@ -688,7 +688,7 @@ footer .facebook:hover {
 }
 
 body {
-  background-image: url(/img/pitchbgyellow.jpg);
+  background-image: url(img/pitchbgyellow.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100vh;
   height: 320vh;
