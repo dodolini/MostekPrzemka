@@ -1,0 +1,161 @@
+main
+    position: relative
+    width: 100%
+    height: 100vh
+    background-color: rgb(59, 131, 224)
+    z-index: 1
+    text-align: center
+    overflow: hidden
+    h1
+        position: relative
+        left: 13%
+        top: 14%
+        transform: translateX(-50%)
+        font-size: 50px
+        display: inline-block
+        .after
+            position: absolute
+            background-color: rgb(59, 131, 224)
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            border-left: 4px solid white
+    .typing
+        animation: cursor .8s linear infinite, typing 3s steps(19) forwards
+
+    .container
+        position: absolute
+        background-image: url(/img/pitchbgyellow.jpg)
+        background-repeat: no-repeat
+        background-size: 100% 100vh
+        width: 70%
+        height: 70%
+        top: 25%
+        left: 15%
+        border: 2px solid white
+        border-radius: 20px
+        overflow: hidden
+        .members
+            display: flex
+        .role
+            flex-grow: 1
+            font-size: 30px
+            height: 100px
+            line-height: 100px
+            background-color: rgb(230, 230, 28)
+            font-family: 'Source Code Pro', monospace
+            color: white
+            text-shadow: 0.1em 0.1em 0.2em black
+            &:hover
+                background-color: rgb(240, 240, 94)
+                cursor: pointer
+
+        .role-active
+            background-color: transparent
+        .keepers
+            display: flex
+            justify-content: center
+            align-items: center
+            height: calc(100% - 100px)
+            .player
+                height: 320px
+                width: 320px
+                border: 2px solid black
+                border-radius: 20px
+                background-color: white
+                img
+                    margin-top: 15px
+                    height: 260px
+                    width: 260px
+                h3
+                    font-family: 'Source Code Pro', monospace
+        .defenders
+            display: none
+            justify-content: space-around
+            align-items: center
+            height: calc(100% - 100px)
+            transition: .5s
+            .player
+                height: 250px
+                width: 250px
+                border: 2px solid black
+                border-radius: 20px
+                background-color: white
+                img
+                    margin-top: 15px
+                    height: 175px
+                    width: 175px
+                h3
+                    font-family: 'Source Code Pro', monospace
+        .midfielders
+            display: none
+            justify-content: space-around
+            align-items: center
+            height: calc(100% - 100px)
+            .player
+                height: 280px
+                width: 280px
+                border: 2px solid black
+                border-radius: 20px
+                background-color: white
+                img
+                    margin-top: 15px
+                    height: 195px
+                    width: 195px
+                h3
+                    font-family: 'Source Code Pro', monospace
+        .strikers
+            display: none
+            justify-content: space-around
+            align-items: center
+            height: calc(100% - 100px)
+            .player
+                height: 250px
+                width: 250px
+                border: 2px solid black
+                border-radius: 20px
+                background-color: white
+                img
+                    margin-top: 15px
+                    height: 175px
+                    width: 175px
+                h3
+                    font-family: 'Source Code Pro', monospace
+@keyframes cursor
+    0%
+        border-color: transparent
+
+    10%
+        border-color: transparent
+
+    25%
+        border-color: white
+
+    75%
+        border-color: white
+
+    90%
+        border-color: transparent
+
+    100%
+        border-color: transparent
+
+@keyframes typing
+    100%
+        left: 100%
+
+@keyframes back
+    100%
+        right: 100%
+
+@media screen and ( max-width: 1400px )
+    .printed
+        left: 25%
+
+@media screen and ( max-width: 500px )
+    .printed
+        font-size: 40px
+        left: 48%
+    
+        

@@ -1,0 +1,80 @@
+nav
+    position: fixed
+    width: 100%
+    height: 150px
+    background-color: transparent
+    line-height: 150px
+    z-index: 3
+    transition: .5s
+    ul
+        display: flex
+        flex-direction: row
+        justify-content: flex-end
+        list-style: none
+        width: 100%
+        height: 100%
+        li
+            display: block
+            width: 10%
+            text-align: center
+            cursor: pointer
+            overflow: hidden
+            a
+                display: block
+                position: relative
+                text-transform: uppercase
+                font-family: 'Source Code Pro', monospace
+                font-size: 30px
+                padding-right: 35px
+                text-decoration: none
+                color: black
+                transition: transform .3s
+
+        li:hover a
+            color: white
+            text-shadow: 0 0 0.1em black
+            transform: translateY(-5%)
+
+.logo
+    position: absolute
+    width: 120px
+    height: 120px
+    transform: translate(20%, 10%)
+    border: 2px solid black
+    border-radius: 50%
+    transition: .4s
+
+.nav-active
+    background-color: #fff
+    opacity: .95
+    height: 100px
+    line-height: 100px
+
+.logo-active
+    height: 80px
+    width: 80px
+
+.burger
+    display: none
+
+@media screen and ( max-width: 1400px )
+    nav ul li
+        width: 15%
+
+@media screen and ( max-width: 500px )
+    #navigation
+        display: none
+    .burger
+        display: block
+        font-size: 40px
+        z-index: 4
+        height: 10vh
+        i
+            position: absolute
+            top: 5vh
+            right: 5vh
+            transition: .3s
+            color: white
+            text-shadow: 0.08em 0.08em 0.15em black
+            &:hover
+                transform: translateY(30%)
