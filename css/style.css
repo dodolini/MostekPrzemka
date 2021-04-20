@@ -114,6 +114,74 @@ nav ul li:hover a {
   }
 }
 
+.mobile-nav {
+  height: 7.2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mobile-nav::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #135cbb;
+  opacity: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.mobile-nav .nav-list {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 75%;
+  height: 100vh;
+  background-color: #135cbb;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
+}
+
+.mobile-nav .nav-list .nav-item {
+  width: 100%;
+}
+
+.open .nav-list {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.open .mobile-nav::before {
+  opacity: 0.5;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
 .information {
   position: relative;
   width: 100%;
@@ -126,7 +194,7 @@ article {
   position: absolute;
   top: 15%;
   left: 5%;
-  width: 18%;
+  width: 350px;
 }
 
 article p {
@@ -244,7 +312,6 @@ i.fa-angle-down {
 @media screen and (max-width: 1400px) {
   article {
     top: 5%;
-    width: 23%;
   }
   h1.mostek {
     left: 35%;
@@ -259,12 +326,19 @@ i.fa-angle-down {
     display: none;
   }
   h1.mostek {
+    position: initial;
     font-size: 80px;
-    left: 10%;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
   }
   h1.przemka {
+    position: initial;
     font-size: 80px;
-    left: 4%;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  .information {
+    text-align: center;
   }
 }
 
@@ -279,13 +353,11 @@ main {
 }
 
 main h1 {
-  position: relative;
-  left: 13%;
-  top: 14%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -webkit-transform: translateY(120px);
+          transform: translateY(120px);
   font-size: 50px;
   display: inline-block;
+  left: 37%;
 }
 
 main h1 .after {
@@ -321,12 +393,13 @@ main .container .members {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 main .container .role {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   font-size: 30px;
   height: 100px;
   line-height: 100px;
@@ -359,8 +432,8 @@ main .container .keepers {
 }
 
 main .container .keepers .player {
-  height: 320px;
-  width: 320px;
+  height: 25vw;
+  width: 25vw;
   border: 2px solid black;
   border-radius: 20px;
   background-color: white;
@@ -368,8 +441,8 @@ main .container .keepers .player {
 
 main .container .keepers .player img {
   margin-top: 15px;
-  height: 260px;
-  width: 260px;
+  height: 20vw;
+  width: 20vw;
 }
 
 main .container .keepers .player h3 {
@@ -536,8 +609,81 @@ main .container .strikers .player h3 {
 
 @media screen and (max-width: 500px) {
   .printed {
-    font-size: 40px;
-    left: 48%;
+    font-size: 27px;
+    left: 12%;
+  }
+  main {
+    height: 200vh;
+  }
+  main .container {
+    top: 15%;
+    background-size: 100% 200vh;
+  }
+  main .container .members {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  main .container .members .role {
+    height: 80px;
+  }
+  main .container .keepers .player {
+    height: 50vw;
+    width: 50vw;
+  }
+  main .container .keepers img {
+    margin-top: 20px;
+    height: 36vw;
+    width: 36vw;
+  }
+  main .container .keepers,
+  main .container .defenders,
+  main .container .midfielders,
+  main .container .strikers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: calc(100% - 320px);
+  }
+  main .container .defenders .player {
+    height: 120px;
+    width: 120px;
+  }
+  main .container .defenders .player img {
+    margin-top: 8px;
+    height: 70px;
+    width: 70px;
+  }
+  main .container .defenders .player h3 {
+    font-size: 14px;
+  }
+  main .container .midfielders .player {
+    height: 120px;
+    width: 120px;
+  }
+  main .container .midfielders .player img {
+    margin-top: 8px;
+    height: 70px;
+    width: 70px;
+  }
+  main .container .midfielders .player h3 {
+    font-size: 14px;
+  }
+  main .container .strikers .player {
+    height: 120px;
+    width: 120px;
+  }
+  main .container .strikers .player img {
+    margin-top: 8px;
+    height: 70px;
+    width: 70px;
+  }
+  main .container .strikers .player h3 {
+    font-size: 14px;
   }
 }
 
@@ -547,12 +693,12 @@ main .container .strikers .player h3 {
   height: 100vh;
   background-color: #e6e61c;
   z-index: 1;
+  text-align: center;
 }
 
-#gallery h1 {
-  position: absolute;
-  left: 40%;
-  top: 11%;
+#gallery .galh {
+  margin-top: 120px;
+  width: 100%;
   font-size: 50px;
 }
 
@@ -624,9 +770,34 @@ main .container .strikers .player h3 {
   z-index: 3;
 }
 
+@media screen and (max-width: 500px) {
+  #gallery {
+    text-align: center;
+  }
+  #gallery .galh {
+    font-size: 30px;
+  }
+  #gallery .photos {
+    width: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #gallery .photos a {
+    -ms-flex-preferred-size: 30%;
+        flex-basis: 30%;
+    -webkit-transform: scale(0.4);
+            transform: scale(0.4);
+  }
+}
+
 footer {
   position: relative;
-  height: 20vh;
+  height: 200px;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
 }
@@ -677,6 +848,12 @@ footer .facebook a i {
 
 footer .facebook:hover {
   background-color: #2c62c7;
+}
+
+@media screen and (max-width: 500px) {
+  footer {
+    height: 70px;
+  }
 }
 
 * {

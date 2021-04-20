@@ -110,4 +110,16 @@ const main = () => {
     strikers.style.display = "flex";
 })
 
+//SELECT ELEMENT FUNCTION
+const selectElement = function (element) {
+    return document.querySelector(element);
+}
+
+const menuToggler = selectElement('.burger');
+const body = selectElement('body');
+
+menuToggler.addEventListener('click', function () {
+  body.classList.toggle('open');
+})
+
   document.addEventListener('DOMContentLoaded', main);

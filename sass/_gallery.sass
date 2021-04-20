@@ -4,10 +4,10 @@
     height: 100vh
     background-color: rgb(230, 230, 28)
     z-index: 1
-    h1
-        position: absolute
-        left: 40%
-        top: 11%
+    text-align: center
+    .galh
+        margin-top: 120px
+        width: 100%
         font-size: 50px
     .photos
         position: absolute
@@ -55,3 +55,15 @@
         a:hover .opis
             opacity: 0.7
             z-index: 3
+@media screen and ( max-width: 500px )
+    #gallery
+        text-align: center
+        .galh
+            font-size: 30px
+        .photos
+            width: 100%
+            flex-direction: row
+            justify-content: center
+            a
+                flex-basis: 30%
+                transform: scale(0.40)

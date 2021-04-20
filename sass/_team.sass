@@ -7,12 +7,10 @@ main
     text-align: center
     overflow: hidden
     h1
-        position: relative
-        left: 13%
-        top: 14%
-        transform: translateX(-50%)
+        transform: translateY(120px)
         font-size: 50px
         display: inline-block
+        left: 37%
         .after
             position: absolute
             background-color: rgb(59, 131, 224)
@@ -38,8 +36,9 @@ main
         overflow: hidden
         .members
             display: flex
+            flex-wrap: wrap
         .role
-            flex-grow: 1
+            flex-basis: 25%
             font-size: 30px
             height: 100px
             line-height: 100px
@@ -59,15 +58,15 @@ main
             align-items: center
             height: calc(100% - 100px)
             .player
-                height: 320px
-                width: 320px
+                height: 25vw
+                width: 25vw
                 border: 2px solid black
                 border-radius: 20px
                 background-color: white
                 img
                     margin-top: 15px
-                    height: 260px
-                    width: 260px
+                    height: 20vw
+                    width: 20vw
                 h3
                     font-family: 'Source Code Pro', monospace
         .defenders
@@ -155,5 +154,63 @@ main
 
 @media screen and ( max-width: 500px )
     .printed
-        font-size: 40px
-        left: 48%
+        font-size: 27px
+        left: 12%
+
+    main
+        height: 200vh
+        .container
+            top: 15%
+            background-size: 100% 200vh
+            .members
+                align-items: center
+                justify-content: center
+                .role
+                    height: 80px
+            .keepers
+                .player
+                    height: 50vw
+                    width: 50vw
+                img
+                    margin-top: 20px
+                    height: 36vw
+                    width: 36vw
+
+            .keepers,
+            .defenders,
+            .midfielders,
+            .strikers
+                flex-direction: column
+                height: calc(100% - 320px)
+
+            .defenders
+                .player
+                    height: 120px
+                    width: 120px
+                    img
+                        margin-top: 8px
+                        height: 70px
+                        width: 70px
+                    h3
+                        font-size: 14px
+            .midfielders
+                .player
+                    height: 120px
+                    width: 120px
+                    img
+                        margin-top: 8px
+                        height: 70px
+                        width: 70px
+                    h3
+                        font-size: 14px
+
+            .strikers
+                .player
+                    height: 120px
+                    width: 120px
+                    img
+                        margin-top: 8px
+                        height: 70px
+                        width: 70px
+                    h3
+                        font-size: 14px
