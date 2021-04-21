@@ -1,4 +1,4 @@
-const navbar = document.querySelector('nav');
+const navbar = document.querySelector('#navigation');
 const logo = document.querySelector('.logo');
 
 

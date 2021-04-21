@@ -171,6 +171,10 @@ nav ul li:hover a {
   width: 100%;
 }
 
+.mobile-nav .nav-list .nav-item a {
+  color: white;
+}
+
 .open .nav-list {
   -webkit-transform: translateX(0);
           transform: translateX(0);
@@ -770,12 +774,19 @@ main .container .strikers .player h3 {
   z-index: 3;
 }
 
+@media screen and (max-width: 1400px) {
+  #gallery .galh {
+    margin-top: 70px;
+  }
+}
+
 @media screen and (max-width: 500px) {
   #gallery {
     text-align: center;
   }
   #gallery .galh {
     font-size: 30px;
+    margin-top: 90px;
   }
   #gallery .photos {
     width: 100%;
